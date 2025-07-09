@@ -1,91 +1,220 @@
-import spotify from "../assets/spotify.svg.jpg";
-import apple from "../assets/applemusic.svg.jpg";
-import amazon from "../assets/amazonmusic.svg.jpg";
-import soundcloud from "../assets/soundcloud.svg.jpg";
-import youtube from "../assets/youtubemusic.svg.jpg";
+import React from "react";
+import styled from "styled-components";
+import bgImage from "../assets/youssoupha.jpg";
+import logo from "../assets/logo youssoupha doré.svg";
+import filmImage from "../assets/film-youssoupha.jpg";
+import albumImage from "../assets/album-youssoupha-avant.jpg";
+import spotify from "../assets/Spotify.jpg";
+import apple from "../assets/Apple music.jpg";
+import amazon from "../assets/Amazon music.jpg";
+import soundcloud from "../assets/Soundcloud.jpg";
+import youtube from "../assets/Youtube music.jpg";
 
 const PageWrapper = styled.div`
   background-image: url(${bgImage});
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center top;
+  background-attachment: fixed;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const TransparentBox = styled.div`
-  background-color: rgba(255, 255, 255, 0.85);
-  padding: 3rem 4rem;
-  border-radius: 20px;
-  display: flex;
-  gap: 2rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  flex-wrap: wrap;
-  justify-content: center;
-`;
-
-const PlatformCard = styled.a`
-  display: block;
-  width: 140px;
-  height: 140px;
-  background: white;
-  border-radius: 20px;
+  width: 100%;
   overflow: hidden;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: scale(1.08);
-  }
+  padding: 4rem 2rem;
 `;
 
 const Logo = styled.img`
-  width: 70%;
-  height: auto;
+  height: 60px;
+  margin-bottom: 2rem;
+`;
+
+const TransparentBox = styled.div`
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 3rem 4rem;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 90vw;
+`;
+
+const AlbumBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+`;
+
+const AlbumImage = styled.img`
+  width: 240px;
+  border-radius: 15px;
+`;
+
+const PlatformGrid = styled.div`
+  display: grid;
+  grid-template-areas:
+    "apple amazon"
+    "soundcloud youtube"
+    "spotify spotify";
+  gap: 1.5rem;
+  margin-top: 1rem;
+
+  @media (min-width: 768px) {
+    grid-template-areas:
+      "apple amazon"
+      "soundcloud youtube"
+      "spotify spotify";
+  }
+`;
+
+const PlatformCard = styled.a`
+  background: #facc15;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  font-family: "Onest Variable", sans-serif;
+  &:hover {
+    transform: scale(1.05);
+  }
+`;
+
+const PlatformLogo = styled.img`
+  width: 24px;
+  height: 24px;
+`;
+
+const FilmContainer = styled.div`
+  background: linear-gradient(135deg, #6D211A, #4e2d24af);
+  padding: 6px;
+  border-radius: 20px;
+`;
+
+const FilmBlock = styled.div`
+  background: linear-gradient(to bottom, #6D211A, #4e2d24af);
+  color: white;
+  border-radius: 15px;
+  padding: 1rem;
+  width: 320px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  box-sizing: border-box;
+`;
+
+const FilmImage = styled.img`
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+`;
+
+const FilmTitle = styled.h3`
+  text-decoration: underline;
+  font-weight: bold;
+  margin-bottom: 1rem;
+`;
+
+const FilmDescription = styled.p`
+  font-size: 0.95rem;
+  margin: 0.4rem 0;
+`;
+
+const FilmButton = styled.a`
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
 `;
 
 export default function Redirect() {
   return (
     <PageWrapper>
+      <Logo src={logo} alt="Logo Youssoupha" />
       <TransparentBox>
-        <PlatformCard
-          href="https://open.spotify.com/intl-fr/album/6kzCJEM3M7eidikn1PzaCr"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Logo src={spotify} alt="Spotify" />
-        </PlatformCard>
-        <PlatformCard
-          href="https://music.apple.com/fr/album/amour-suprême/1722310277"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Logo src={apple} alt="Apple Music" />
-        </PlatformCard>
-        <PlatformCard
-          href="https://music.amazon.fr/albums/B0CQ2L7JKB"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Logo src={amazon} alt="Amazon Music" />
-        </PlatformCard>
-        <PlatformCard
-          href="https://soundcloud.com/youssoupha-officiel"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Logo src={soundcloud} alt="SoundCloud" />
-        </PlatformCard>
-        <PlatformCard
-          href="https://www.youtube.com/results?search_query=youssoupha+amour+suprême"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Logo src={youtube} alt="YouTube Music" />
-        </PlatformCard>
+        <AlbumBlock>
+          <AlbumImage src={albumImage} alt="Album Youssoupha" />
+          <PlatformGrid>
+            <PlatformCard
+              href="https://music.apple.com/fr/album/amour-suprême/1716896127"
+              style={{ gridArea: "apple" }}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <PlatformLogo src={apple} alt="Apple Music" /> Apple Music
+            </PlatformCard>
+            <PlatformCard
+              href="https://music.amazon.fr/albums/B0DTHZNTBP"
+              style={{ gridArea: "amazon" }}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <PlatformLogo src={amazon} alt="Amazon Music" /> Amazon Music
+            </PlatformCard>
+            <PlatformCard
+              href="https://soundcloud.com/search?q=youssoupha%20amour%20supreme"
+              style={{ gridArea: "soundcloud" }}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <PlatformLogo src={soundcloud} alt="SoundCloud" /> Soundcloud
+            </PlatformCard>
+            <PlatformCard
+              href="https://music.youtube.com/playlist?list=OLAK5uy_nEEmcClYgPoV28smQESjRwUgLUK1sBokY"
+              style={{ gridArea: "youtube" }}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <PlatformLogo src={youtube} alt="YouTube Music" /> Youtube Music
+            </PlatformCard>
+            <PlatformCard
+              href="https://open.spotify.com/intl-fr/album/6kzCJEM3M7eidikn1PzaCr"
+              style={{ gridArea: "spotify" }}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <PlatformLogo src={spotify} alt="Spotify" /> Spotify
+            </PlatformCard>
+          </PlatformGrid>
+        </AlbumBlock>
+
+        <FilmContainer>
+          <FilmBlock>
+            <FilmTitle>découvrez aussi le film</FilmTitle>
+            <FilmImage src={filmImage} alt="Film Youssoupha" />
+            <p style={{ fontSize: "0.95rem", fontWeight: "bold" }}>
+              Youssoupha - AMOUR SUPRÊME (le film)
+            </p>
+            <FilmDescription>
+              produit par Youssoupha et co-réalisé par Arpheno
+            </FilmDescription>
+            <FilmButton
+              href="https://youtu.be/0fdMyTr_GfE?si=z3OWsiPLEKCHL9kL"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Voir le film
+            </FilmButton>
+          </FilmBlock>
+        </FilmContainer>
       </TransparentBox>
     </PageWrapper>
   );

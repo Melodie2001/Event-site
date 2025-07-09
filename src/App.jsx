@@ -6,16 +6,16 @@ import Artist from "./pages/Artist";
 
 function App() {
   return (
-    <>
-      <Header />
+    <div className="app">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/redirect" element={<Redirect />} />
         <Route path="/artist" element={<Artist />} />
+        <Route path="/redirect" element={<Redirect />} />
       </Routes>
-    </>
+    </div>
   );
 }
+
 
 export default App;
 
