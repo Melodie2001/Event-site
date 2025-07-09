@@ -1,77 +1,130 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import styled from "styled-components";
+import albumAvant from "../assets/album-youssoupha-avant.png.jpg";
+import albumDos from "../assets/album-youssoupha-dos.png.jpg";
+import bgImage from "../assets/youssoupha.png.jpg";
+import artisteImage from "../assets/youssoupha-artiste3.svg?url";
+import SocialCarousel from "../components/SocialCarousel";
 
-const Home = () => {
+
+
+
+const PageWrapper = styled.div`
+  background-image: url(${bgImage});
+  background-size: cover;
+  background-position: top center;
+  min-height: 100vh;
+  position: relative;
+`;
+
+const Title = styled.h1`
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 4.5rem;
+  font-weight: 900;
+  color: #facc15; /* jaune */
+  letter-spacing: 0.2rem;
+  z-index: 2;
+`;
+
+const AlbumContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding-top: 200px;
+  position: relative;
+  z-index: 1;
+`;
+
+const AlbumImage = styled.img`
+  width: 240px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+`;
+
+const CallToAction = styled.div`
+  margin: 3rem auto;
+  background: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  width: fit-content;
+  gap: 1.5rem;
+`;
+
+const Button = styled.a`
+  background-color: #facc15;
+  color: black;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale(1.05);
+  }
+`;
+
+const ArtistBlock = styled.div`
+  background-color: #8B0000;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  gap: 3rem;
+`;
+
+const ArtistImage = styled.img`
+  width: 280px;
+  border-radius: 15px;
+  object-fit: contain;
+`;
+
+const ArtistText = styled.div`
+  max-width: 400px;
+  font-weight: bold;
+  font-size: 1.5rem;
+`;
+
+const ArtistButton = styled.a`
+  margin-top: 1rem;
+  display: inline-block;
+  background-color: #facc15;
+  color: black;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+`;
+
+export default function Home() {
   return (
-    <div className="bg-neutral-100 text-black font-sans">
-      {/* HERO */}
-      <section className="relative bg-black text-white">
-        <img
-          src="/assets/youssoupha-bg.jpg"
-          alt="Youssoupha"
-          className="w-full h-[70vh] object-cover opacity-40"
-        />
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
-          <h1 className="text-5xl font-bold uppercase">Youssoupha</h1>
-          <p className="text-2xl mt-2">Amour Suprême</p>
-          <Link
-            to="/album"
-            className="mt-6 bg-white text-black px-6 py-3 rounded-md font-semibold hover:bg-gray-200 transition"
-          >
-            Écoutez maintenant
-          </Link>
-        </div>
-      </section>
+    <PageWrapper>
+      <Title>YOUSSOUPHA</Title>
 
-      {/* Navigation rapide */}
-      <section className="flex flex-col md:flex-row justify-center gap-8 my-10 text-lg font-medium text-center">
-        <Link to="/artist" className="hover:underline">Découvrez l’artiste</Link>
-        <Link to="/discography" className="hover:underline">Voir toute la discographie</Link>
-      </section>
+      <AlbumContainer>
+        <AlbumImage src={albumAvant} alt="Album Avant" />
+        <AlbumImage src={albumDos} alt="Album Dos" />
+      </AlbumContainer>
 
-      {/* Dates de tournée */}
-      <section className="bg-yellow-100 py-10 px-4">
-        <h2 className="text-2xl font-bold text-center mb-6">Dates de tournée</h2>
-        <div className="max-w-xl mx-auto space-y-3 text-lg">
-          <div className="flex justify-between"><span>12.02</span><span>Lille – Zénith</span></div>
-          <div className="flex justify-between"><span>27.02</span><span>Lyon – Tony Garnier</span></div>
-          <div className="flex justify-between"><span>04.03</span><span>Paris – Accor Arena</span></div>
-        </div>
-      </section>
+      <CallToAction>
+        <p>AMOUR SUPRÊME <br /> EST SORTI</p>
+        <Button href="/redirect">écouter <br /> maintenant</Button>
+      </CallToAction>
 
-      {/* Dernières news */}
-      <section className="py-12 px-4">
-        <h2 className="text-2xl font-bold text-center mb-6">Dernières news</h2>
-        <div className="max-w-3xl mx-auto bg-white rounded shadow-md flex flex-col md:flex-row overflow-hidden">
-          <img
-            src="/assets/youssoupha-news.jpg"
-            alt="News"
-            className="w-full md:w-1/3 object-cover h-48 md:h-auto"
-          />
-          <div className="p-4">
-            <h3 className="text-xl font-semibold">Aute arartiule actti texte</h3>
-            <p className="text-sm text-gray-600 mt-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi...
-            </p>
-          </div>
+      <ArtistBlock>
+        <ArtistImage src={artisteImage} alt="Youssoupha" />
+        <div>
+          <ArtistText>Qui est-il ? D’où vient-il ?</ArtistText>
+          <ArtistButton href="/artist">Découvrez l’artiste</ArtistButton>
         </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-neutral-200 py-6 text-center">
-        <div className="flex justify-center gap-6 text-2xl">
-          <a href="https://spotify.com" target="_blank" rel="noopener noreferrer">🎵</a>
-          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">▶️</a>
-          <a href="https://music.apple.com" target="_blank" rel="noopener noreferrer">🍎</a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">🐦</a>
-        </div>
-        <p className="mt-4 text-sm text-gray-500">&copy; 2025 Youssoupha – Amour Suprême</p>
-      </footer>
-    </div>
+      </ArtistBlock>µ
+      <SocialCarousel />
+    </PageWrapper>
   );
-};
-
-export default Home;
-
-
-
+}

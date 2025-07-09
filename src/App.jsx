@@ -1,21 +1,19 @@
-import { Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Album from './pages/Album';
-import Tour from './pages/Tour';
-import Blog from './pages/Blog';
-import Admin from './pages/Admin';
+import { Routes, Route } from "react-router-dom";
+import Header from "./components/global/Header";
+import Home from "./pages/Home";
+import Redirect from "./pages/Redirect";
+import Artist from "./pages/Artist";
 
 function App() {
   return (
-    
+    <>
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/album" element={<Album />} />
-        <Route path="/tour" element={<Tour />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/admin" element={<Admin />} />
+        <Route path="/redirect" element={<Redirect />} />
+        <Route path="/artist" element={<Artist />} />
       </Routes>
-   
+    </>
   );
 }
 
