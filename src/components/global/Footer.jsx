@@ -66,7 +66,7 @@ const Footer = () => {
               <FaFacebookF className="hover:scale-110 transition text-[#1877F2]" />
             </a>
             <a
-              href="https://music.apple.com/fr/album/amour-suprême/1716896127"
+              href="https://music.apple.com/fr/search?term=youssoupha%20amour%20supreme%20"
               target="_blank"
               rel="noopener noreferrer"
             >

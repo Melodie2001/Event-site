@@ -39,9 +39,11 @@ const TourDates = () => {
           </div>
 
           <div className="sm:self-start sm:mt-0">
-            <button className="bg-yellow-400 text-black font-semibold px-6 py-2 rounded-md hover:bg-yellow-300 transition w-full sm:w-auto">
+          {event.data.disponibilite==="available"?<button className="bg-yellow-400 text-black font-semibold px-6 py-2 rounded-md hover:bg-yellow-300 transition w-full sm:w-auto">
               Book now
-            </button>
+            </button>:<button disabled className="bg-black text-yellow font-semibold px-6 py-2 rounded-md transition w-full sm:w-auto">
+             Sold Out
+            </button>}  
           </div>
         </div>
       ))}

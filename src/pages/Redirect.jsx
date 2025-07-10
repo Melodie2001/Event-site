@@ -173,7 +173,7 @@ export default function Redirect() {
           <AlbumImage src={albumImage} alt="Youssoupha Album" />
           <PlatformGrid>
             <PlatformCard
-              href="https://music.apple.com/fr/album/amour-suprême/1716896127"
+              href="https://music.apple.com/fr/search?term=youssoupha%20amour%20supreme%20"
               style={{ gridArea: "apple" }}
               target="_blank"
               rel="noopener noreferrer"
