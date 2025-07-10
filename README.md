@@ -44,7 +44,7 @@ Modifier
 | `/`            | Main landing page with album & artist preview   |
 | `/redirect`    | Redirection to streaming platforms              |
 | `/artist`      | Detailed biography of Youssoupha                |
-| `/tour`        | Tour dates dynamically loaded from database    |
+| `/tour`        | Tour dates dynamically loaded from Firestore    |
 
 ---
 
