@@ -18,16 +18,10 @@ const Footer = () => {
           <h2 className="text-3xl font-bold mb-6">Navigation</h2>
           <div className="space-y-3 text-[15px] leading-tight">
             <Link to="/artist" className="lg:text-xl text-white font-bold block">
-              À propos
+              About
             </Link>
-            <Link to="/tracklist" className="lg:text-xl text-white font-bold block">
+            <Link to="/redirect" className="lg:text-xl text-white font-bold block">
               Tracklist
-            </Link>
-            <Link to="/tour" className="lg:text-xl text-white font-bold block">
-              Dates de tournée
-            </Link>
-            <Link to="/blog" className="lg:text-xl text-white font-bold block">
-              News
             </Link>
           </div>
         </div>
@@ -94,6 +88,7 @@ const Footer = () => {
 };
 
 export default Footer;
+
 
 
 
