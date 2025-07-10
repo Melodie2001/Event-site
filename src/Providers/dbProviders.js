@@ -1,31 +1,16 @@
-const dbProviders = {
-  async getAllData(collectionName) {
-   
-    return [
-      {
-        id: "1",
-        data: {
-          date: {
-            toDate: () => new Date("2025-11-20"),
-          },
-          ville: "Paris",
-          pays: "France",
-          lieux: "Zénith",
-        },
-      },
-      {
-        id: "2",
-        data: {
-          date: {
-            toDate: () => new Date("2025-12-05"),
-          },
-          ville: "Lyon",
-          pays: "France",
-          lieux: "Halle Tony Garnier",
-        },
-      },
-    ];
-  },
-};
-
-export default dbProviders;
+import {
+collection,
+getDocs,
+} from "firebase/firestore";
+import { db } from "../Config/FirebaseConfig";
+export default{
+    async getAllData(path) {
+    const querySnapshot = await getDocs(collection(db, path));
+    const list = querySnapshot.docs.map((doc) => {
+      return {
+        id: doc.id,
+        data: doc.data(),
+      };
+    });
+    return list;
+  },}

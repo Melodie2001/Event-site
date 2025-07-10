@@ -9,6 +9,7 @@ import apple from "../assets/Apple music.jpg";
 import amazon from "../assets/Amazon music.jpg";
 import soundcloud from "../assets/Soundcloud.jpg";
 import youtube from "../assets/Youtube music.jpg";
+import { Link } from "react-router-dom"
 
 const PageWrapper = styled.div`
   background-image: url(${bgImage});
@@ -165,7 +166,7 @@ const FilmButton = styled.a`
 export default function Redirect() {
   return (
     <PageWrapper>
-      <Logo src={logo} alt="Youssoupha Logo" />
+     <Link to={'/'}> <Logo src={logo} alt="Youssoupha logo" /> </Link> 
       <TransparentBox>
         <AlbumBlock>
           <Title>AMOUR SUPRÊME</Title>

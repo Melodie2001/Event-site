@@ -7,7 +7,7 @@ import artisteImage from "../assets/youssoupha-artiste3.svg?url";
 import logo from "../assets/logo youssoupha doré.svg";
 import SocialCarousel from "../components/SocialCarousel";
 import Tracklist from "../components/home/MiniTracklist";
-import Tour from "../components/home/TourDates";
+import TourDates from "../components/home/TourDates";
 import Footer from "../components/global/Footer";
 
 const PageWrapper = styled.div`
@@ -205,7 +205,7 @@ export default function Home() {
       </div>
 
       <div id="tour">
-        <Tour />
+        <TourDates />
       </div>
 
       <div id="news">

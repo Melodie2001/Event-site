@@ -4,6 +4,7 @@ import bgImage from "../assets/youssoupha.jpg";
 import image1 from "../assets/youssoupha-artiste2.jpg";
 import image2 from "../assets/youssoupha-artiste1.jpg";
 import logo from "../assets/logo youssoupha doré.svg";
+import { Link } from "react-router-dom";
 
 const PageWrapper = styled.div`
   background-image: url(${bgImage});
@@ -97,7 +98,7 @@ const SectionTitle = styled.h2`
 export default function Artist() {
   return (
     <PageWrapper>
-      <Logo src={logo} alt="Youssoupha logo" />
+     <Link to={'/'}> <Logo src={logo} alt="Youssoupha logo" /> </Link> 
       <ContentBlock>
         <Section>
           <Image src={image1} alt="Youssoupha portrait" />
