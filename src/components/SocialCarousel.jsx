@@ -6,11 +6,20 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
   gap: 2rem;
   background: transparent;
   padding: 4rem 2rem;
   overflow: hidden;
+  font-family: 'Onest Variable', sans-serif;
+
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const Title = styled.h2`
@@ -20,12 +29,29 @@ const Title = styled.h2`
   width: 200px;
   text-align: left;
   line-height: 1.2;
+
+  @media (max-width: 768px) {
+    text-align: center;
+    width: 100%;
+    font-size: 1.5rem;
+  }
 `;
 
 const CarouselContainer = styled.div`
   display: flex;
   gap: 2rem;
   transition: transform 0.4s ease;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const Slide = styled.a`
@@ -42,6 +68,11 @@ const Slide = styled.a`
   &:hover {
     transform: scale(1.05);
     opacity: 1;
+  }
+
+  @media (max-width: 480px) {
+    width: 130px;
+    height: 230px;
   }
 `;
 
@@ -70,7 +101,7 @@ export default function SocialCarousel() {
   return (
     <Wrapper>
       <Title>
-        DERNIÈRES<br />
+        LATEST<br />
         NEWS
       </Title>
       <CarouselContainer>

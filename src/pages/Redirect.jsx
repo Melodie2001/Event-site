@@ -22,33 +22,47 @@ const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4rem 2rem;
+  padding: 3rem 1rem;
 `;
 
 const Logo = styled.img`
   height: 60px;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 `;
 
 const TransparentBox = styled.div`
-  background-color: rgba(255, 255, 255, 0.3);
-  padding: 3rem 4rem;
+  background-color: rgba(150, 148, 148, 0.25);
+  padding: 2rem;
   border-radius: 20px;
   display: flex;
   flex-direction: row;
-  gap: 5rem;
+  gap: 3rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
-  max-width: 90vw;
+  max-width: 95vw;
+  font-family: "Onest Variable", sans-serif;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const AlbumBlock = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
+`;
+
+const Title = styled.h2`
+  color: #facc15;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.5rem;
 `;
 
 const AlbumImage = styled.img`
@@ -62,21 +76,23 @@ const PlatformGrid = styled.div`
     "apple amazon"
     "soundcloud youtube"
     "spotify spotify";
-  gap: 1.5rem;
+  gap: 1rem;
   margin-top: 1rem;
 
-  @media (min-width: 768px) {
+  @media (max-width: 768px) {
     grid-template-areas:
-      "apple amazon"
-      "soundcloud youtube"
-      "spotify spotify";
+      "apple"
+      "amazon"
+      "soundcloud"
+      "youtube"
+      "spotify";
   }
 `;
 
 const PlatformCard = styled.a`
   background: #facc15;
   border-radius: 12px;
-  padding: 0.75rem 1rem;
+  padding: 0.7rem 1rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -86,6 +102,7 @@ const PlatformCard = styled.a`
   justify-content: center;
   transition: transform 0.3s ease;
   font-family: "Onest Variable", sans-serif;
+
   &:hover {
     transform: scale(1.05);
   }
@@ -148,10 +165,11 @@ const FilmButton = styled.a`
 export default function Redirect() {
   return (
     <PageWrapper>
-      <Logo src={logo} alt="Logo Youssoupha" />
+      <Logo src={logo} alt="Youssoupha Logo" />
       <TransparentBox>
         <AlbumBlock>
-          <AlbumImage src={albumImage} alt="Album Youssoupha" />
+          <Title>AMOUR SUPRÊME</Title>
+          <AlbumImage src={albumImage} alt="Youssoupha Album" />
           <PlatformGrid>
             <PlatformCard
               href="https://music.apple.com/fr/album/amour-suprême/1716896127"
@@ -175,7 +193,7 @@ export default function Redirect() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <PlatformLogo src={soundcloud} alt="SoundCloud" /> Soundcloud
+              <PlatformLogo src={soundcloud} alt="SoundCloud" /> SoundCloud
             </PlatformCard>
             <PlatformCard
               href="https://music.youtube.com/playlist?list=OLAK5uy_nEEmcClYgPoV28smQESjRwUgLUK1sBokY"
@@ -183,7 +201,7 @@ export default function Redirect() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <PlatformLogo src={youtube} alt="YouTube Music" /> Youtube Music
+              <PlatformLogo src={youtube} alt="YouTube Music" /> YouTube Music
             </PlatformCard>
             <PlatformCard
               href="https://open.spotify.com/intl-fr/album/6kzCJEM3M7eidikn1PzaCr"
@@ -198,20 +216,20 @@ export default function Redirect() {
 
         <FilmContainer>
           <FilmBlock>
-            <FilmTitle>découvrez aussi le film</FilmTitle>
-            <FilmImage src={filmImage} alt="Film Youssoupha" />
+            <FilmTitle>Also Discover the Film</FilmTitle>
+            <FilmImage src={filmImage} alt="Youssoupha Film" />
             <p style={{ fontSize: "0.95rem", fontWeight: "bold" }}>
-              Youssoupha - AMOUR SUPRÊME (le film)
+              Youssoupha - AMOUR SUPRÊME (The Film)
             </p>
             <FilmDescription>
-              produit par Youssoupha et co-réalisé par Arpheno
+              Produced by Youssoupha and co-directed by Arpheno
             </FilmDescription>
             <FilmButton
               href="https://youtu.be/0fdMyTr_GfE?si=z3OWsiPLEKCHL9kL"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Voir le film
+              Watch the Film
             </FilmButton>
           </FilmBlock>
         </FilmContainer>
@@ -219,13 +237,3 @@ export default function Redirect() {
     </PageWrapper>
   );
 }
-
-
-
-
-
-
-
-
-
-
