@@ -1,12 +1,91 @@
-# React + Vite
+# 🎤 Youssoupha – Amour Suprême (Official Event Website)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is the official **event website** for the artist **Youssoupha** and his latest album **"Amour Suprême"**.  
+It showcases the album, the artist's biography, streaming links, tour dates, and social media content.
 
-Currently, two official plugins are available:
+## 📸 Preview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Preview](./public/screenshot.jpg)
 
-## Expanding the ESLint configuration
+## 🚀 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ⚛️ **React** (with Vite)
+- 🎨 **TailwindCSS** & **styled-components**
+- 🎬 **Framer Motion** (for animations)
+- 🖼️ Responsive design
+- 🔁 Routing with React Router
+- ☁️ Firebase Firestore (for tour data)
+- 📦 Deployed with [Vercel](ici) or Netlify
+
+---
+
+## 📁 Project Structure
+src/
+├── assets/ # Images and logos
+├── components/
+│ ├── global/ # Header, Footer
+│ ├── home/ # HeroSection, MiniTracklist, NewsPreview
+├── pages/ # Home, Redirect, Artist
+├── Providers/ # Firebase / Firestore providers
+├── App.jsx
+├── index.jsx
+├── index.css
+
+yaml
+Copier
+Modifier
+
+---
+
+## 🌐 Pages
+
+| Page           | Description                                      |
+|----------------|--------------------------------------------------|
+| `/`            | Main landing page with album & artist preview   |
+| `/redirect`    | Redirection to streaming platforms              |
+| `/artist`      | Detailed biography of Youssoupha                |
+| `/tour`        | Tour dates dynamically loaded from database    |
+
+---
+
+## 📦 Installation
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/Melodie2001/Event-site
+cd event-site
+
+# 2. Install dependencies
+npm install
+
+# 3. Start the development server
+npm run dev
+🔗 External Links
+🎵 Spotify Album
+
+🎬 Youssoupha – Le Film
+
+📷 Instagram
+
+🕊️ Twitter
+
+📱 TikTok
+
+🧠 Author
+Made with by Élodie Minkoue – Student Ecole MULTIMEDIA
+ Web Development | Creative Front-End
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
