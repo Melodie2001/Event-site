@@ -31,7 +31,7 @@ const Footer = () => {
           <h2 className="text-3xl font-bold mb-6">Socials</h2>
           <div className="grid grid-cols-3 gap-6 text-2xl">
             <a
-              href="https://www.youtube.com/channel/UCfZ1eXRDMRGhHOllG-tT4aQ"
+              href="https://youtu.be/0fdMyTr_GfE?si=z3OWsiPLEKCHL9kL"
               target="_blank"
               rel="noopener noreferrer"
             >
